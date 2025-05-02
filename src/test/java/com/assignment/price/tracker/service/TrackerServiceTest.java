@@ -92,5 +92,4 @@ class TrackerServiceTest {
         // Verify scheduler was not canceled
         verify(scheduledFuture, never()).cancel(false);
     }
-
 }
