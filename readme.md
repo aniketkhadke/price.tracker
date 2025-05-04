@@ -27,8 +27,11 @@ This demo application allows users to track product prices and receive notificat
         ]
     }
 
-    Similarly, all other parameters are mandatory.
-
+    Similarly, other validations are:
+        The productUrl is a mandatory parameter and must be a valid URL.
+        The scheduleInterval is a mandatory parameter.
+        The triggerPrice is a mandatory parameter and must be a positive number.
+        
 #### Valid request, product price matches at the API call
     Request:
     {
@@ -62,7 +65,7 @@ This demo application allows users to track product prices and receive notificat
         "timestamp": "2025-05-02T11:23:48.959+00:00"
     }
 
-#### Valid request, but invalid product URL
+#### Valid request, but the product is not available
     Request:
     {
         "productUrl": "http://toysworld.com/bear",
