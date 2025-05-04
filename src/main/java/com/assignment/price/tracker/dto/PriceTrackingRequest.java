@@ -1,9 +1,6 @@
 package com.assignment.price.tracker.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.hibernate.validator.constraints.URL;
@@ -18,6 +15,7 @@ public class PriceTrackingRequest {
     private String productUrl;
 
     @NotNull(message = "The trigger price for alert is a mandatory parameter.")
+    @Min(value = 0, message = "The trigger price must be greater than or equal to zero.")
     private Double triggerPrice;
 
     @NotBlank(message = "The schedule for price checks is a mandatory parameter.")
