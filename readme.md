@@ -3,7 +3,7 @@
 This is a demo application with a REST endpoint to schedule price tracking for a product.
 User will receive a notification when the price matches or goes lower than the quoted price by the user.
 
-## Technologies
+## Tech Stack
     Java 17
     Spring Boot 3.4.5
     PMD 7.0
