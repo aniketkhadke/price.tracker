@@ -1,9 +1,8 @@
 # Product Price Tracking App
 
-This is a demo application with a REST endpoint to schedule price tracking for a product.
-User will receive a notification when the price matches or goes lower than the quoted price by the user.
+This demo application allows users to track product prices and receive notifications when the price falls within a specified range. It provides a single POST API endpoint that can be used to schedule price checks. The details of the request and response structures are provided below.
 
-## Technologies
+## Tech Stack
     Java 17
     Spring Boot 3.4.5
     PMD 7.0
@@ -11,7 +10,8 @@ User will receive a notification when the price matches or goes lower than the q
     
 ## Sample Request and Response
 
-### Endpoint: http://localhost:8080/price-tracker    
+### Endpoint: http://localhost:8080/price-tracker  
+### HTTP Method: POST
 ### Scenarios
 #### Invalid request:
     Request:
@@ -26,6 +26,8 @@ User will receive a notification when the price matches or goes lower than the q
             "The trigger price for alert is a mandatory parameter."
         ]
     }
+
+    Similarly, all other parameters are mandatory.
 
 #### Valid request, product price matches at the API call
     Request:
@@ -44,7 +46,7 @@ User will receive a notification when the price matches or goes lower than the q
         "timestamp": "2025-05-02T11:22:13.073+00:00"
     }
 
-#### Valid request, scheduler set for price checks in future
+#### Valid request, scheduler set for price checks in the future
     Request:
     {
         "productUrl": "http://toysworld.com/teddy-bear",
