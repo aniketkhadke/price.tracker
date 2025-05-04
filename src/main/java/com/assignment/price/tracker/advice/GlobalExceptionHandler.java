@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(code=HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseEntity<PriceTrackingResponse> handle(final Exception exception){
-        PriceTrackingResponse response = PriceTrackingResponse.builder()
+        final PriceTrackingResponse response = PriceTrackingResponse.builder()
                 .message(exception.getMessage())
                 .timestamp(Timestamp.from(Instant.now()))
                 .build();
